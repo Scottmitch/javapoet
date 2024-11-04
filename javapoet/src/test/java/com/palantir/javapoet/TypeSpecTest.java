@@ -2757,6 +2757,7 @@ public final class TypeSpecTest {
                         .returns(String.class)
                         .addCode("return FOO;\n")
                         .build())
+                .addInitializerComment("@@protoc_insertion_point(service_scope:)")
                 .addInitializerBlock(
                         CodeBlock.builder().addStatement("foo = $S", "FOO").build())
                 .build();
@@ -2776,6 +2777,8 @@ public final class TypeSpecTest {
                           }
 
                           private String foo;
+
+                          // @@protoc_insertion_point(service_scope:)
 
                           {
                             foo = "FOO";
